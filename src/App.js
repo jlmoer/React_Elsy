@@ -25,9 +25,6 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row">
-          <p>Heart : {heartMin}</p>
-          <p>Temperature : {tempMin}</p>
-          <p>Steps : {stepsMin}</p>
           {/* Water*/}
           <Box
             icon="local_drink"
