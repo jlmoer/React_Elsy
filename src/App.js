@@ -20,7 +20,23 @@ class App extends React.Component {
       temperature: -10,
       steps: 3000,
     }
+    this.onHeartChange = this.onHeartChange.bind(this);
+    this.onStepsChange = this.onStepsChange.bind(this);
+    this.onTempChange = this.onTempChange.bind(this);
   }
+
+  onHeartChange(e) {
+    this.setState({ input: e.target.value })
+  }
+
+  onStepsChange(e) {
+    this.setState({ input: e.target.value })
+  }
+
+  onTempChange(e) {
+    this.setState({ input: e.target.value })
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -47,7 +63,10 @@ class App extends React.Component {
       </div>
     );
   }
-
 }
 
+
+
 export default App;
+
+
