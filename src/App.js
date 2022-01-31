@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      water: 0,
+      water: 1.5,
       heart: 120,
       temperature: -10,
       steps: 3000,
@@ -46,21 +46,39 @@ class App extends React.Component {
           <Box
             icon="local_drink"
             color="#3A85FF"
-            value={1.5}
+            value={this.state.water}
             unit="L"
           />
           {/* Walk */}
           <Box
-            onChange={() => this.onStepsChange()}
+            onChange={this.onStepsChange}
             icon="directions_walk"
             color="black"
-            value={3000}
+            value={this.state.steps}
             unit="steps"
+            min={stepsMin}
+            max={stepsMax}
           />
           {/* Heart */}
-          <Box icon="favorite" color="red" value={120} unit="bpm" />
+          <Box
+            onChange={this.onHeartChange}
+            icon="favorite"
+            color="red"
+            value={this.state.heart}
+            unit="bpm"
+            min={heartMin}
+            max={heartMax}
+          />
           {/* Sun */}
-          <Box icon="wb_sunny" color="yellow" value={-10} unit="°C" />
+          <Box
+            onChange={this.onTempChange}
+            icon="wb_sunny"
+            color="yellow"
+            value={this.state.temperature}
+            unit="°C"
+            min={tempMin}
+            max={tempMax}
+          />
         </div>
       </div>
     );
