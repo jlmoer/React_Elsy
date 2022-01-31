@@ -26,15 +26,16 @@ class App extends React.Component {
   }
 
   onHeartChange(e) {
-    this.setState({ input: e.target.value })
+    this.setState({ heart: e.target.value })
   }
 
   onStepsChange(e) {
-    this.setState({ input: e.target.value })
+    console.log(e.target.value);
+    this.setState({ steps: e.target.value })
   }
 
   onTempChange(e) {
-    this.setState({ input: e.target.value })
+    this.setState({ temperature: e.target.value })
   }
 
   render() {
@@ -50,6 +51,7 @@ class App extends React.Component {
           />
           {/* Walk */}
           <Box
+            onChange={() => this.onStepsChange()}
             icon="directions_walk"
             color="black"
             value={3000}

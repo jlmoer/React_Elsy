@@ -5,7 +5,7 @@ class Box extends React.Component {
     if (this.props.icon !== "local_drink") {
       return (
         <div>
-          <input type="range" onChange={this.handleUsername} min="" max="" value="" onChange="" />
+          <input type="range" min="" max="" value="" onChange={(e) => this.props.onChange(e)} />
         </div>
       )
     }
